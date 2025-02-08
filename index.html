@@ -58,6 +58,16 @@
       color: inherit;
       text-decoration: none;
     }
+    /* Instagram-Button: Icon anstatt Text */
+    .instagram-button {
+      padding: 10px;
+    }
+    .instagram-button svg {
+      vertical-align: middle;
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+    }
     /* Spendenbereich */
     .donation-section {
       background-color: #fff;
@@ -113,7 +123,7 @@
     <section class="donation-section">
       <h2>Vielen Dank für deinen Besuch bei der Buuchweeh Clique!</h2>
       <p>Falls dir das Foto gefällt, würden wir uns über eine Spende freuen.</p>
-      <p>Mit deiner Unterstützung hilfst du uns, dass wir auch nächstes Jahr wieder an der Fasnacht Teilnehmen können</p>
+      <p>Mit deiner Unterstützung hilfst du uns, dass wir auch nächstes Jahr wieder an der Fasnacht Teilnehmen können.</p>
       
       <div class="donation-details">
         <p><strong>IBAN:</strong> CHxx xxxx xxxx xxxx xxxx</p>
@@ -124,10 +134,16 @@
 
     <footer>
       <p>Vielen Dank und viel Spass beim Feiern!</p>
-      <p>Hast du noch nicht genug von uns, dann folge uns auf Instagram</p>
-      <!-- Neuer Instagram-Button -->
+      <p>Hast du noch nicht genug von uns, dann folge uns auf Instagram.</p>
+      <!-- Neuer Instagram-Button mit Icon -->
       <a href="https://www.instagram.com/buchweeh_clique/" target="_blank">
-        <button>Instagram besuchen</button>
+        <button class="instagram-button" aria-label="Instagram besuchen">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.357 3.608 1.332.975.975 1.27 2.242 1.332 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.357 2.633-1.332 3.608-.975.975-2.242 1.27-3.608 1.332-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.357-3.608-1.332-.975-.975-1.27-2.242-1.332-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.357-2.633 1.332-3.608C4.54 2.52 5.807 2.225 7.173 2.163 8.439 2.105 8.819 2.093 12 2.093m0-2.163C8.735 0 8.332.012 7.052.07 5.771.127 4.664.426 3.75 1.34 2.836 2.254 2.537 3.361 2.48 4.642.012 8.332 0 8.735 0 12s.012 3.668.07 4.948c.057 1.281.357 2.388 1.27 3.302.914.914 2.021 1.213 3.302 1.27C8.332 23.988 8.735 24 12 24s3.668-.012 4.948-.07c1.281-.057 2.388-.357 3.302-1.27.914-.914 1.213-2.021 1.27-3.302C23.988 15.668 24 15.265 24 12s-.012-3.668-.07-4.948c-.057-1.281-.357-2.388-1.27-3.302C20.388.426 19.281.127 18 .07 16.72.012 16.317 0 12 0z"/>
+            <path d="M12 5.838A6.162 6.162 0 005.838 12 6.162 6.162 0 0012 18.162 6.162 6.162 0 0018.162 12 6.162 6.162 0 0012 5.838zm0 10.163A4.001 4.001 0 118 12a4.001 4.001 0 014 4.001z"/>
+            <circle cx="18.406" cy="5.594" r="1.44"/>
+          </svg>
+        </button>
       </a>
     </footer>
   </div>
