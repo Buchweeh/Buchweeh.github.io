@@ -2,57 +2,28 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Download - Fotobox V4</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      width: 80%;
-      max-width: 800px;
-      margin: 50px auto;
-      background: #fff;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    h1 {
-      color: #333;
-    }
-    .download-btn {
-      display: inline-block;
-      margin: 20px auto;
-      padding: 15px 25px;
-      background-color: #4CAF50;
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .download-btn:hover {
-      background-color: #45a049;
-    }
-    .donation {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #555;
-    }
-  </style>
+  <title>Foto Download</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Vielen Dank, liebe Buchweeh Clique!</h1>
-    <p>Wir freuen uns, dass ihr dabei wart.</p>
-    <!-- Beispiel-Download-Button. Passe 'photo_12345.jpg' an, wenn du eine andere Datei hast -->
-    <a class="download-btn" href="/download/photo_12345.jpg" target="_blank">Foto herunterladen</a>
-    <div class="donation">
-      <p>Falls dir das Foto gefällt, würden wir uns über eine kleine Spende freuen!</p>
-      <p>Spendenmöglichkeiten: Twint, IBAN oder bar in unser bereitgestelltes Kässeli</p>
-    </div>
-  </div>
+  <h1>Dein Foto ist fertig!</h1>
+  <p>Klicke auf den Button, um das Foto von Google Drive herunterzuladen:</p>
+  <a id="downloadButton" href="#" target="_blank">
+    <button>Foto herunterladen</button>
+  </a>
+  <script>
+    // Funktion zum Auslesen eines Query-Parameters
+    function getQueryParameter(name) {
+      let params = new URLSearchParams(window.location.search);
+      return params.get(name);
+    }
+    // Hole den Parameter "drive_link"
+    var driveLink = getQueryParameter("drive_link");
+    if (driveLink) {
+      document.getElementById("downloadButton").href = driveLink;
+    } else {
+      document.getElementById("downloadButton").style.display = "none";
+      document.body.insertAdjacentHTML('beforeend', '<p>Kein Foto gefunden.</p>');
+    }
+  </script>
 </body>
 </html>
