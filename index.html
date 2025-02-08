@@ -2,28 +2,116 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <!-- Mobile-Optimierung -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Foto Download</title>
+  <style>
+    /* Grundlegendes Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1, h2 {
+      color: #0056b3;
+    }
+    p {
+      line-height: 1.6;
+    }
+    /* Button-Styling */
+    button, .donate-button {
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover, .donate-button:hover {
+      background-color: #0056b3;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    /* Spendenbereich */
+    .donation-section {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    /* Responsive Anpassungen */
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      button, .donate-button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Dein Foto ist fertig!</h1>
-  <p>Klicke auf den Button, um das Foto von Google Drive herunterzuladen:</p>
-  <a id="downloadButton" href="#" target="_blank">
-    <button>Foto herunterladen</button>
-  </a>
-  <script>
-    // Funktion zum Auslesen eines Query-Parameters
-    function getQueryParameter(name) {
-      let params = new URLSearchParams(window.location.search);
-      return params.get(name);
-    }
-    // Hole den Parameter "drive_link"
-    var driveLink = getQueryParameter("drive_link");
-    if (driveLink) {
-      document.getElementById("downloadButton").href = driveLink;
-    } else {
-      document.getElementById("downloadButton").style.display = "none";
-      document.body.insertAdjacentHTML('beforeend', '<p>Kein Foto gefunden.</p>');
-    }
-  </script>
+  <div class="container">
+    <header>
+      <h1>Dein Foto ist fertig!</h1>
+      <p>Klicke auf den Button, um das Foto von Google Drive herunterzuladen:</p>
+    </header>
+
+    <!-- Foto Download (Nicht verändern!) -->
+    <a id="downloadButton" href="#" target="_blank">
+      <button>Foto herunterladen</button>
+    </a>
+    <script>
+      // Funktion zum Auslesen eines Query-Parameters
+      function getQueryParameter(name) {
+        let params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+      // Hole den Parameter "drive_link"
+      var driveLink = getQueryParameter("drive_link");
+      if (driveLink) {
+        document.getElementById("downloadButton").href = driveLink;
+      } else {
+        document.getElementById("downloadButton").style.display = "none";
+        document.body.insertAdjacentHTML('beforeend', '<p>Kein Foto gefunden.</p>');
+      }
+    </script>
+
+    <!-- Spendenbereich -->
+    <section class="donation-section">
+      <h2>Vielen Dank für deine Teilnahme an der Fasnacht!</h2>
+      <p>Wir freuen uns über jede Unterstützung. Falls du uns mit einer Spende helfen möchtest, kannst du entweder per IBAN oder Twint spenden.</p>
+      <div class="donation-details">
+        <p><strong>IBAN:</strong> CHxx xxxx xxxx xxxx xxxx</p>
+        <!-- Twint-Button (Link wird später eingefügt) -->
+        <a href="#" class="donate-button">Mit Twint spenden</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Vielen Dank und viel Spaß beim Feiern!</p>
+    </footer>
+  </div>
 </body>
 </html>
