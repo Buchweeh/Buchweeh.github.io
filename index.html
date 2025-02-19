@@ -116,6 +116,169 @@
       <p>Falls dir das Foto gefällt, würden wir uns über eine Spende freuen.</p>
       <p>Mit deiner Unterstützung hilfst du uns, dass wir auch nächstes Jahr wieder an der Fasnacht Teilnehmen können.</p>
       <div class="donation-details">
+        <!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <!-- Mobile-Optimierung -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto Download</title>
+  <style>
+    /* Grundlegendes Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #0056b3;
+    }
+    p {
+      line-height: 1.6;
+    }
+    /* Bild unserer Clique */
+    .clique-photo {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+    /* Button-Styling (Standard) */
+    button, .donate-button {
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover, .donate-button:hover {
+      background-color: #0056b3;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    /* Instagram-Button (wie Spenden-Button, aber in Instagram-Pink) */
+    .instagram-button {
+      background-color: #E1306C;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .instagram-button:hover {
+      background-color: #C13584;
+    }
+    /* Spendenbereich */
+    .donation-section {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: center;
+      margin: 30px 0;
+    }
+    /* Download-Bereich */
+    .download-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+    /* Footer Styling */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+    /* Responsive Anpassungen */
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      button, .donate-button, .instagram-button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Bild unserer Clique -->
+    <img class="clique-photo" src="https://raw.githubusercontent.com/Buchweeh/Buchweeh.github.io/main/IMG-20240904-WA0001.jpg" alt="Foto unserer Clique">
+
+    <!-- Überschrift direkt unterhalb des Bildes -->
+    <h1 style="text-align: center;">Deine Fasnachtserinnerung ist fertig!</h1>
+
+    <!-- Spendenbereich -->
+    <section class="donation-section">
+      <h2>Vielen Dank für deinen Besuch bei der Buchweeh Clique!</h2>
+      <p>Falls dir das Foto gefällt, würden wir uns über eine Spende freuen.</p>
+      <p>Mit deiner Unterstützung hilfst du uns, dass wir auch nächstes Jahr wieder an der Fasnacht Teilnehmen können.</p>
+      <div class="donation-details">
+        <p><strong>Empfäner:</strong> Buchweeh Clique</p>
+        <p><strong>IBAN:    </strong> CH06 0631 3640 4858 2140 7</p>
+        <!-- Twint-Button -->
+        <a href="https://pay.raisenow.io/ymyxd?lng=de" class="donate-button">Mit Twint spenden</a>
+      </div>
+    </section>
+
+    <!-- Download-Bereich -->
+    <section class="download-section">
+      <p>Klicke auf den Button, um das Foto von Google Drive herunterzuladen:</p>
+      <a id="downloadButton" href="#" target="_blank">
+        <button>Foto herunterladen</button>
+      </a>
+    </section>
+    
+    <script>
+      // Funktion zum Auslesen eines Query-Parameters
+      function getQueryParameter(name) {
+        let params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+      // Hole den Parameter "drive_link"
+      var driveLink = getQueryParameter("drive_link");
+      if (driveLink) {
+        document.getElementById("downloadButton").href = driveLink;
+      } else {
+        document.getElementById("downloadButton").style.display = "none";
+        document.body.insertAdjacentHTML('beforeend', '<p>Kein Foto gefunden.</p>');
+      }
+    </script>
+
+    <footer>
+      <p>Vielen Dank und viel Spass beim Feiern!</p>
+      <p>Hast du noch nicht genug von uns, dann folge uns auf Instagram.</p>
+      <!-- Instagram-Button -->
+      <a href="https://www.instagram.com/buchweeh_clique/" target="_blank">
+        <button class="instagram-button" aria-label="Besuche Instagram">
+          Besuche Instagram
+        </button>
+      </a>
+    </footer>
+  </div>
+</body>
+</html>
+
         <p><strong>IBAN:</strong> CHxx xxxx xxxx xxxx xxxx</p>
         <!-- Twint-Button -->
         <a href="https://pay.raisenow.io/ymyxd?lng=de" class="donate-button">Mit Twint spenden</a>
